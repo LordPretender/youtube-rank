@@ -1,0 +1,27 @@
+					<ul id="filter-buttons">
+						<li><a href="#" data-filter="*" class="selected">Tous</a></li>
+						{loop="youtube_categories"}
+						<li><a href="#" data-filter=".cat_{$key}">{$value}</a></li>
+			            {/loop}
+					</ul>
+					
+					<!-- Filter container -->
+					<div id="filter-container" class="cf">
+					
+						{loop="youtube_vidéos"}
+						<figure class="cat_{$value[2]}">
+							<a href="http://www.youtube.com/watch?v={$key}" class="thumb"><img src="https://i.ytimg.com/vi/{$key}/mqdefault.jpg" alt="alt" /></a>
+							<figcaption>
+								<a href="http://www.youtube.com/watch?v={$key}"><h3 class="heading">{$value[1]}</h3></a>
+								
+								<span class="pictogram" title="En ligne depuis : {$value[0]}" alt="En ligne depuis : {$value[0]}">&#128229;</span> 
+								<span class="pictogram" title="Catégorie : {$value[3]}" alt="Catégorie : {$value[3]}">&#59148;</span> 
+								<span class="pictogram" title="Classement : {$value[6]}" alt="Classement : {$value[6]}">&#127942;</span> 
+								<span class="pictogram" title="Nombre de vues : {$value[4]}" alt="Nombre de vues : {$value[4]}">&#128269;</span> 
+								<span class="pictogram" title="Nombre de fois aimée : {$value[5]}" alt="Nombre de fois aimée : {$value[5]}">{if="$value[5] < 0"}&#128078;{else}&#128077;{/if}</span> 
+								<span class="pictogram" title="Nombre de commentaires : {$value[7]}" alt="Nombre de commentaires : {$value[7]}">&#59168;</span> 
+							</figcaption>
+						</figure>
+			            {/loop}
+					
+					</div><!-- ENDS Filter container -->

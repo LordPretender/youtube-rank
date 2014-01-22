@@ -1,0 +1,51 @@
+			<p><h3>HISTORIQUE</h3></p>
+			<p>
+				Ci-dessous, retrouvez l'évolution du TOP 10 général avec les vidéos actuellement dans le classement, mais aussi ceux qui en faisaient partie.
+				<br />
+				Javascript est nécessaire. De plus, veuillez éviter d'utiliser Internet Explorer car ce dernier charge très mal le graphe.
+			</p>
+			
+			<div id="myChart1g" style="width:100%; height:500px;"></div>
+			<script type="text/javascript">
+				var série;
+				
+				//Paramètres du graphique
+				EJSC.STRINGS.building_message = "Construction";
+				EJSC.STRINGS.max_zoom_message = "Il n'est pas possible de zoomer plus.";
+				EJSC.STRINGS.drawing_message = "Graphique en cours de construction";
+				EJSC.STRINGS.chart_legend_title = "Vidéos";
+
+				//Création du graphique
+				var chart = new EJSC.Chart("myChart1g", {
+					title: "Evolution"
+					, axis_bottom: {
+						caption: "Période",
+						cursor_position: { show: true, formatter: new EJSC.DateFormatter({format_string:"MM/DD/YYYY"}) },
+						size: 30,
+						crosshair: { show: true },
+						extremes_ticks: true,
+						formatter: new EJSC.DateFormatter({format_string: 'DD/MM<br />YYYY'})
+					},
+					axis_left: {
+						caption: "Pourcentage", 
+						crosshair: { show: false } 
+					},
+					auto_zoom: 'y' ,
+					auto_find_point_by_x: true
+				});
+				
+				{loop="evolution_coord"}
+				série = new EJSC.LineSeries(
+					new EJSC.ArrayDataHandler([
+						{function="implode(',',$value)"}
+					]),
+					{
+						x_axis_formatter: new EJSC.DateFormatter({
+							format_string: 'YYYY-MM-DD'
+						})
+					}
+				);
+				série.title = "{$key}";
+				chart.addSeries(série);
+	            {/loop}
+			</script>

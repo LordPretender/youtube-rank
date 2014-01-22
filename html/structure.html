@@ -1,0 +1,177 @@
+<!doctype html> 
+<html class="no-js">
+
+	<head>
+		<meta charset="utf-8"/>
+		<title>{if="$page_slug != 'accueil'"}{$page_titre} | {/if}{$site_titre}</title>
+		<meta name="description" content="{$meta_description}">
+		<link href="{$site_tpl}img/favicon.ico" rel="icon"" type="image/x-icon"/>
+		
+		<!--[if lt IE 9]>
+			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link rel="stylesheet" media="all" href="{$site_tpl}css/style.css"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<!-- Adding "maximum-scale=1" fixes the Mobile Safari auto-zoom bug: http://filamentgroup.com/examples/iosScaleBug/ -->		
+				
+		<!-- JS -->
+		<script src="{$site_tpl}js/jquery-1.7.1.min.js"></script>
+		<script src="{$site_tpl}js/custom.js"></script>
+		<script src="{$site_tpl}js/tabs.js"></script>
+		<script src="{$site_tpl}js/css3-mediaqueries.js"></script>
+		
+		<!-- Isotope -->
+		<script src="{$site_tpl}js/jquery.isotope.min.js"></script>
+				
+		<!-- superfish -->
+		<link rel="stylesheet" media="screen" href="{$site_tpl}css/superfish.css" /> 
+		<script  src="{$site_tpl}js/superfish-1.4.8/js/hoverIntent.js"></script>
+		<script  src="{$site_tpl}js/superfish-1.4.8/js/superfish.js"></script>
+		<script  src="{$site_tpl}js/superfish-1.4.8/js/supersubs.js"></script>
+		<!-- ENDS superfish -->
+		
+		<!-- GOOGLE FONTS -->
+		<link href='http://fonts.googleapis.com/css?family=Voltaire' rel='stylesheet' type='text/css'>
+
+		<!-- modernizr -->
+		<script src="{$site_tpl}js/modernizr.js"></script>
+		
+		<!-- SKIN -->
+		<link rel="stylesheet" media="all" href="{$site_tpl}css/skin.css"/>
+		
+		<!-- Less framework -->
+		<link rel="stylesheet" media="all" href="{$site_tpl}css/lessframework.css"/>
+		
+		<!-- jplayer -->
+		<link href="{$site_tpl}player-skin/jplayer-black-and-yellow.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript" src="{$site_tpl}js/jquery.jplayer.min.js"></script>
+		
+		<!-- EJSChart -->
+		<script type="text/javascript" src="{$site_tpl}js/EJSChart/EJSChart.js"></script>
+		
+		<script type="text/javascript">
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-32301432-6']);
+			_gaq.push(['_trackPageview']);
+
+			(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
+		</script>
+		
+		<script type="text/javascript" src="http://www.linkbucks.com/Webservices/jsParseLinks.aspx?id=c1411eed"></script>
+	</head>
+	
+	<body>
+	
+		<!-- HEADER -->
+		<header>
+			<div class="wrapper cf">
+				
+				<div id="logo">
+					<a href="/"><img  src="{$site_tpl}img/logo.png" alt="{$site_titre}"></a>
+				</div>
+				
+				<!-- nav -->
+				<ul id="nav" class="sf-menu">
+					<li{if="$page_slug == 'accueil'"} class="current-menu-item"{/if}><a href="/"><span>GÉNÉRAL</span></a></li>
+					{loop="pages"}
+		            {if="$key > 0"}<li{if="$value[1] == $page_slug"} class="current-menu-item"{/if}><a href="/{$value[1]}">{$value[0]}</a></li>{/if}
+		            {/loop}
+					
+					<li><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=P8G4PVNSB9UGA">DONS</a></li>
+				</ul>
+				<div id="combo-holder"></div>
+				<!-- ends nav -->
+
+			</div>
+		</header>
+		<!-- ENDS HEADER -->
+		
+		<!-- MAIN -->
+		<div id="main">
+			<div class="wrapper cf">
+			
+				<!-- portfolio content-->
+	        	<div id="portfolio-content" class="cf">
+					<div class="pub_728">
+		                <script type="text/javascript"><!--
+		                    google_ad_client = "ca-pub-5126470956370561";
+		                    google_ad_slot = "4372856667";
+		                    google_ad_width = 728;
+		                    google_ad_height = 90;
+		                    //-->
+		                </script>
+		                <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+					
+					{include="$page_contenu"}
+					
+					<div class="pub_728">
+		                <script type="text/javascript"><!--
+		                    google_ad_client = "ca-pub-5126470956370561";
+		                    google_ad_slot = "4372856667";
+		                    google_ad_width = 728;
+		                    google_ad_height = 90;
+		                    //-->
+		                </script>
+		                <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+					</div>
+				</div>
+				<!-- ENDS featured -->
+			
+			</div><!-- ENDS WRAPPER -->
+			
+		</div>
+		<!-- ENDS MAIN -->
+		
+		
+		<!-- FOOTER -->
+		<footer>
+			<div class="wrapper cf">
+			
+				<!-- widgets -->
+				<ul  class="widget-cols cf">
+					<li class="first-col">
+						
+						<div class="widget-block">
+							<h4>À PROPOS</h4>
+							<p>Site de classement des vidéos youtube, les informations sont actualisées toutes les heures et les vidéos qui ne sont pas (ou plus) dans le classement sont régulièrements supprimées.</p> 
+						</div>
+					</li>
+					
+					<li class="second-col">
+						
+						<div class="widget-block">
+							<h4>DROITS D'AUTEUR</h4>
+							<p>Les informations relatives aux vidéos (et les images) proviennent toutes de Youtube. Elles sont disponibles gratuitement via des liens qu'ils mettent à la disposition de tout le monde.</p> 
+						</div>
+						
+					</li>
+				</ul>
+				<!-- ENDS widgets -->	
+				
+				
+				<!-- bottom -->
+				<div class="footer-bottom">
+					<div class="left">&copy; 2012 - <a href="http://www.duy-pham.fr">Duy PHAM</a> (thème <a href="http://luiszuno.com" >luiszuno.com</a>). Dernière mise à jour le {$youtube_cron}.</div>
+					
+					<ul id="social-bar" class="cf sb">
+						<li><a href="http://www.facebook.com/LePretender"  title="Facebook" class="facebook">Facebook</a></li>
+						<li><a href="https://twitter.com/LordPretender" title="Twitter" class="twitter">Twitter</a></li>
+						<li><a href="https://plus.google.com/115243787377889359805/posts" title="Google+" class="plus">Google+</a></li>
+					</ul>
+				</div>	
+				<!-- ENDS bottom -->
+			
+			</div>
+		</footer>
+		<!-- ENDS FOOTER -->
+		
+	</body>
+	
+	
+	
+</html>
